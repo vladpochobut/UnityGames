@@ -1,0 +1,2 @@
+PaddleMoveUnitsPerSecond,BallImpulseForce,BallLifeTimeSeconds,NewBallSpawnSecondsMin,NewBallSpawnSecondsMax,PointsForCommonBlock,PointsForBonusBlock,PointsForPickupBlock,ProbabilitieOfPickUpBlock,ProbabilitieOfCommonBlock,ProbabilitieOfBonusBlock,NumberOfBalls
+5,200,10,5,10,5,10,7,10,60,30,10
