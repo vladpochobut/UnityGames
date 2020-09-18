@@ -45,7 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroid: {fileID: 4599178135755791052, guid: 671ddd2221968164794774f732427860,
     type: 3}
-  _roadList: []
+  _minSpawnChance: 15
+  _maxSpawnChance: 60
+  _complicityIncreaseRate: 6
 --- !u!1 &727195068482803229
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroid: {fileID: 4599178135755791052, guid: 671ddd2221968164794774f732427860,
     type: 3}
-  _roadList: []
+  _minSpawnChance: 15
+  _maxSpawnChance: 60
+  _complicityIncreaseRate: 6
 --- !u!1 &2246912207165759901
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +142,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroid: {fileID: 4599178135755791052, guid: 671ddd2221968164794774f732427860,
     type: 3}
-  _roadList: []
+  _minSpawnChance: 15
+  _maxSpawnChance: 60
+  _complicityIncreaseRate: 6
 --- !u!114 &3387284178862550774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +246,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroid: {fileID: 4599178135755791052, guid: 671ddd2221968164794774f732427860,
     type: 3}
-  _roadList: []
+  _minSpawnChance: 15
+  _maxSpawnChance: 60
+  _complicityIncreaseRate: 6
 --- !u!1 &7321873487138155449
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3928cd8c323f6b14c97cb10420cc4b51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnPointsController: {fileID: 7153220536985425664}
+  SpawnPointsController: {fileID: 7153220536985425664}
 --- !u!1 &7549036886990490992
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,4 +756,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _asteroid: {fileID: 4599178135755791052, guid: 671ddd2221968164794774f732427860,
     type: 3}
-  _roadList: []
+  _minSpawnChance: 15
+  _maxSpawnChance: 60
+  _complicityIncreaseRate: 6

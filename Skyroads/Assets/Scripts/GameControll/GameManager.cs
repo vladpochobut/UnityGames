@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private float _restartdelay = 1f;
     public GameObject DeadUI;
 
-    public void EndGame()
+    public void RestartGame()
     {
         if (_gameHasEntered == false)
         {
@@ -18,6 +18,6 @@ public class GameManager : MonoBehaviour
             DeadUI.SetActive(true);
         }
     }
-
+    
  
 }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class RoadSpawner : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> _roads;
+    private List<Road> _roads;
 
 
     private float _offset = 16f;
@@ -25,12 +25,12 @@ public class RoadSpawner : MonoBehaviour
 
     public void MoveRoad()
     {
-        GameObject _moveRoad = _roads[0];
+        Road _moveRoad = _roads[0];
         _roads.Remove(_moveRoad);
         float _newZ = _roads[_roads.Count - 1].transform.position.z + _offset;
         _moveRoad.transform.position = new Vector3(0, 0, _newZ);
         _roads.Add(_moveRoad);
-        _moveRoad.GetComponent<Road>().SpawnPointsController.TriggerSpawnpoints();
+        _moveRoad.SpawnPointsController.TriggerSpawnpoints();
        
 
 
