@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Road : MonoBehaviour
 {
-   public SpawnPointsController _spawnPointsController;
+   public SpawnPointsController SpawnPointsController;
 }

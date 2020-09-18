@@ -22,6 +22,9 @@ public class PlayerMove : MonoBehaviour
     private float _startSpeed;
     private float _boostSpeed ;
 
+    [SerializeField]
+    private int _accelerationFactor = 2;
+
 
     public float _firstLanePos, _laneDistance, _sideSpeed;
 
@@ -29,7 +32,7 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         _startSpeed = _forwardSpeed;
-        _boostSpeed = _forwardSpeed * 2;
+        _boostSpeed = _forwardSpeed * _accelerationFactor;
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
     }
@@ -37,7 +40,7 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         _direcction.z = _forwardSpeed;
-        _characterController.Move(_direcction * Time.fixedDeltaTime);
+        _characterController.Move(_direcction * Time.deltaTime);
 
         Score.Invoke();
 
@@ -45,7 +48,7 @@ public class PlayerMove : MonoBehaviour
         
 
         Vector3 _newPosition = transform.position;
-            _newPosition.x = Mathf.Lerp(_newPosition.x, _firstLanePos + (_laneNumber + _laneDistance), Time.fixedDeltaTime * _sideSpeed);
+            _newPosition.x = Mathf.Lerp(_newPosition.x, _firstLanePos + (_laneNumber + _laneDistance), Time.deltaTime * _sideSpeed);
             transform.position = _newPosition;
         
     }
@@ -57,13 +60,15 @@ public class PlayerMove : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            StartCoroutine(DoLeft());
             _sign = -1;
+            StartCoroutine(DoLeft());
+            
         }
         else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
-            StartCoroutine(DoRigth());
             _sign = 1;
+            StartCoroutine(DoRigth());
+            
         }
         else if (Input.GetKey(KeyCode.Space))
         {

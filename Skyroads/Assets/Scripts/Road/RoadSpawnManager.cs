@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class RoadSpawnManager : MonoBehaviour
 {
     private RoadSpawner _roadSpawner;
 

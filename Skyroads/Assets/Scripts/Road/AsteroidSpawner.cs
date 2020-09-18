@@ -8,12 +8,15 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField]
     private GameObject _asteroid;
 
-   
-    private int _spawnChance = 15;
-    private float _elapsedSec = 0;
-    public List<GameObject> _roadList;
+    [SerializeField]
+    private int _minSpawnChance = 15;
+    [SerializeField]
+    private int _maxSpawnChance = 60;
+    [SerializeField]
+    private int _complicityIncreaseRate = 6;
 
-    private BoxCollider _boxCollider;
+    private float _elapsedSec = 0;
+    //public List<GameObject> _roadList;
 
 
     public void Start()
@@ -23,16 +26,16 @@ public class AsteroidSpawner : MonoBehaviour
     private void Update()
     {
         _elapsedSec += Time.deltaTime; 
-        if (_spawnChance < 60)
+        if (_minSpawnChance < _maxSpawnChance)
         {
-            if (_elapsedSec >= 6)
+            if (_elapsedSec >= _complicityIncreaseRate)
             {
                 _elapsedSec = 0;
-                _spawnChance++;
+                _minSpawnChance++;
             }
         }
         else
-            _spawnChance = 60;
+            _minSpawnChance = _maxSpawnChance;
     }
 
 
@@ -40,7 +43,7 @@ public class AsteroidSpawner : MonoBehaviour
     public GameObject SpawnWithChance()
     {
         int i = Random.Range(0, 100);
-        if (i > 0 && i < _spawnChance)
+        if (i > 0 && i < _minSpawnChance)
         {
             return Instantiate(_asteroid, transform.position, Quaternion.identity);
         }

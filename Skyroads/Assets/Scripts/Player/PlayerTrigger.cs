@@ -5,14 +5,15 @@ using UnityEngine.Events;
 
 public class PlayerTrigger : MonoBehaviour
 {
-    public SpawnManager _spawnManager;
-    public PlayerMove _playerMove;
+    public RoadSpawnManager SpawnManager;
+    public PlayerMove PlayerMove;
     public UnityEvent AsterScore;
+    public UnityEvent EndGame;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "SpawnTrigger")
         {
-            _spawnManager.SpawnTriggerEntered();
+            SpawnManager.SpawnTriggerEntered();
         }
         if (other.tag == "Asteroid")
         {
@@ -25,9 +26,9 @@ public class PlayerTrigger : MonoBehaviour
     {
         if (_collision.collider.tag == "Asteroid")
         {
-            _playerMove.enabled = false;
+            PlayerMove.enabled = false;
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, -1f, transform.position.z), Time.deltaTime * 10);
-            FindObjectOfType<GameManager>().EndGame();
+            EndGame.Invoke();
         }
     }
 }

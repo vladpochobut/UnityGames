@@ -5,28 +5,28 @@ using UnityEngine.UI;
 
 public class RestartHUD : MonoBehaviour
 {
-    static Text _score;
+    [SerializeField]
+    private Text _score;
     static float _actualScore;
     const string _scorePrefix = "Total Score : ";
 
-    static Text _asteroidsPassed;
+    [SerializeField]
+    private Text _asteroidsPassed;
     const string _asteroidsPrefix = "Asteroids Passed : ";
     static float _actualAsteroids;
 
-    static Text _maxScore;
+    [SerializeField]
+    private Text _maxScore;
     static float _actualMaxScore;
     const string _maxScorePrefix = "Max Score : ";
-    const string _maxScorePrefixCong = "Сongratulations!!!!";
 
-    static Text _cong;
+    [SerializeField]
+    private Text _cong;
     const string _congPrefix = "congratulations!!! new";
 
     private void Start()
     {
-        _cong = GameObject.FindGameObjectWithTag("Congratulations").GetComponent<Text>();
-        _score = GameObject.FindGameObjectWithTag("ScoreRes").GetComponent<Text>();
-        _asteroidsPassed = GameObject.FindGameObjectWithTag("PassedAsteroidsRes").GetComponent<Text>();
-        _maxScore = GameObject.FindGameObjectWithTag("MaxScore").GetComponent<Text>();
+       
 
         _actualAsteroids = PlayerPrefs.GetInt("PassedAsteroids");
         _actualScore = PlayerPrefs.GetFloat("Score");

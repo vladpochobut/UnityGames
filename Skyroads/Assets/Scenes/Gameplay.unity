@@ -5008,7 +5008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _restartdelay: 1
-  _deadUI: {fileID: 723909906}
+  DeadUI: {fileID: 723909906}
 --- !u!4 &288714403
 Transform:
   m_ObjectHideFlags: 0
@@ -5500,7 +5500,6 @@ GameObject:
   - component: {fileID: 579840887}
   - component: {fileID: 579840890}
   - component: {fileID: 579840889}
-  - component: {fileID: 579840888}
   m_Layer: 5
   m_Name: Score
   m_TagString: Score
@@ -5527,18 +5526,6 @@ RectTransform:
   m_AnchoredPosition: {x: 321.64, y: -84.324}
   m_SizeDelta: {x: -643.277, y: 56.21643}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &579840888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579840886}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7006fff66a58be442aad5d9138fa22ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &579840889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5702,6 +5689,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  EndGame:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 288714402}
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &619941787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5744,6 +5745,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _forwardSpeed: 5
+  _accelerationFactor: 2
   _firstLanePos: -2
   _laneDistance: 1
   _sideSpeed: 5
@@ -5902,6 +5904,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b10c64531141cd4a911209491f20a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: {fileID: 557386219}
+  _asteroidsPassed: {fileID: 1804207696}
+  _maxScore: {fileID: 95644714}
+  _cong: {fileID: 1748738229}
 --- !u!1 &1036755490 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7321873488019383412, guid: 34f46f20575711c41ac623e56d760a2b,
@@ -6132,6 +6138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6efa44a38521864ea5401a945229c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: {fileID: 579840889}
+  _asteroidsPassed: {fileID: 547021708}
+  _maxScore: {fileID: 1695422800}
 --- !u!1 &1475466142
 GameObject:
   m_ObjectHideFlags: 0
@@ -10927,7 +10936,6 @@ GameObject:
   - component: {fileID: 1695422798}
   - component: {fileID: 1695422801}
   - component: {fileID: 1695422800}
-  - component: {fileID: 1695422799}
   m_Layer: 5
   m_Name: MaxScore
   m_TagString: MaxScorePlay
@@ -10951,101 +10959,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 321.64, y: -28.108}
+  m_AnchoredPosition: {x: 321.64, y: -28.107971}
   m_SizeDelta: {x: -643.277, y: 56.21643}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1695422799
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695422797}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7006fff66a58be442aad5d9138fa22ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1695422800
 MonoBehaviour:
   m_ObjectHideFlags: 0

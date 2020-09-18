@@ -30,7 +30,7 @@ public class RoadSpawner : MonoBehaviour
         float _newZ = _roads[_roads.Count - 1].transform.position.z + _offset;
         _moveRoad.transform.position = new Vector3(0, 0, _newZ);
         _roads.Add(_moveRoad);
-        _moveRoad.GetComponent<Road>()._spawnPointsController.TriggerSpawnpoints();
+        _moveRoad.GetComponent<Road>().SpawnPointsController.TriggerSpawnpoints();
        
 
 

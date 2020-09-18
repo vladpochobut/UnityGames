@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class RestartGame : MonoBehaviour
 {
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (Input.anyKeyDown)
         {
             
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         }
-        
     }
+
+
 }
