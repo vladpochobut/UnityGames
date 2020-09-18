@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private bool _gameHasEntered = false;
-    [SerializeField]
-    private float _restartdelay = 1f;
     public GameObject DeadUI;
 
     public void RestartGame()

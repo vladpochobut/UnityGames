@@ -5,15 +5,16 @@ using UnityEngine.Events;
 
 public class PlayerTrigger : MonoBehaviour
 {
-    public RoadSpawnManager SpawnManager;
+
     public PlayerMove PlayerMove;
     public UnityEvent AsterScore;
     public UnityEvent EndGame;
+    public UnityEvent SpawnTrigger;
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "SpawnTrigger")
         {
-            SpawnManager.SpawnTriggerEntered();
+            SpawnTrigger.Invoke();
         }
         if (other.tag == "Asteroid")
         {

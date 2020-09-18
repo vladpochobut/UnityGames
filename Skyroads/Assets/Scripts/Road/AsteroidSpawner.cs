@@ -5,8 +5,8 @@ using UnityEngine.Experimental.PlayerLoop;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _asteroid;
+    //[SerializeField]
+    //private GameObject _asteroid;
 
     [SerializeField]
     private int _minSpawnChance = 15;
@@ -17,10 +17,11 @@ public class AsteroidSpawner : MonoBehaviour
 
     private float _elapsedSec = 0;
     //public List<GameObject> _roadList;
-
+    ObjectPooler _objectPooler;
 
     public void Start()
     {
+        _objectPooler = ObjectPooler.Instance;
         SpawnWithChance();
     }
     private void Update()
@@ -45,7 +46,8 @@ public class AsteroidSpawner : MonoBehaviour
         int i = Random.Range(0, 100);
         if (i > 0 && i < _minSpawnChance)
         {
-            return Instantiate(_asteroid, transform.position, Quaternion.identity);
+            return _objectPooler.SpawnFromPool("Asteroid", transform.position, Quaternion.identity);
+                //Instantiate(_asteroid, transform.position, Quaternion.identity);
         }
         else
             return null;

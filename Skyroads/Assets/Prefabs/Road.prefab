@@ -106,7 +106,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8928827991606752137}
   - component: {fileID: 1215456849269685089}
-  - component: {fileID: 3387284178862550774}
   m_Layer: 10
   m_Name: SpawnPoint
   m_TagString: Spawner
@@ -145,18 +144,6 @@ MonoBehaviour:
   _minSpawnChance: 15
   _maxSpawnChance: 60
   _complicityIncreaseRate: 6
---- !u!114 &3387284178862550774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2246912207165759901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4298f0d906a97c4b8af29270e8f13a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3748285415187386043
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,8 +26,6 @@ public class RestartHUD : MonoBehaviour
 
     private void Start()
     {
-       
-
         _actualAsteroids = PlayerPrefs.GetInt("PassedAsteroids");
         _actualScore = PlayerPrefs.GetFloat("Score");
         _actualMaxScore = PlayerPrefs.GetFloat("MaxScore");
