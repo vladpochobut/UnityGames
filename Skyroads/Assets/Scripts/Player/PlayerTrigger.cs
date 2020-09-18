@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class PlayerTrigger : MonoBehaviour
 {
-
     public PlayerMove PlayerMove;
     public UnityEvent AsterScore;
     public UnityEvent EndGame;
     public UnityEvent SpawnTrigger;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "SpawnTrigger")
@@ -20,7 +20,6 @@ public class PlayerTrigger : MonoBehaviour
         {
             AsterScore.Invoke();
         }
-        
     }
 
     private void OnCollisionEnter(Collision _collision)

@@ -7,22 +7,22 @@ public class RestartHUD : MonoBehaviour
 {
     [SerializeField]
     private Text _score;
-    static float _actualScore;
-    const string _scorePrefix = "Total Score : ";
+    private static float _actualScore;
+    private const string _scorePrefix = "Total Score : ";
 
     [SerializeField]
     private Text _asteroidsPassed;
-    const string _asteroidsPrefix = "Asteroids Passed : ";
-    static float _actualAsteroids;
+    private const string _asteroidsPrefix = "Asteroids Passed : ";
+    private static float _actualAsteroids;
 
     [SerializeField]
     private Text _maxScore;
-    static float _actualMaxScore;
-    const string _maxScorePrefix = "Max Score : ";
+    private static float _actualMaxScore;
+    private const string _maxScorePrefix = "Max Score : ";
 
     [SerializeField]
     private Text _cong;
-    const string _congPrefix = "congratulations!!! new";
+    private const string _congPrefix = "congratulations!!! new";
 
     private void Start()
     {
@@ -39,6 +39,4 @@ public class RestartHUD : MonoBehaviour
         _score.text = _scorePrefix + _actualScore.ToString("0");
         _asteroidsPassed.text = _asteroidsPrefix + _actualAsteroids.ToString("0");
     }   
-    
-
 }

@@ -9,11 +9,7 @@ public class RestartGame : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
         }
     }
-
-
 }

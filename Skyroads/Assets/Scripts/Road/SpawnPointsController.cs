@@ -14,6 +14,5 @@ public class SpawnPointsController : MonoBehaviour
             _spawner = _child.gameObject.GetComponent<AsteroidSpawner>();
             _spawner.SpawnWithChance();
        }
-
     }
 }

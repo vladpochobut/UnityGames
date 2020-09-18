@@ -41,7 +41,6 @@ public class ObjectPooler : MonoBehaviour
     public List<Pool> Pools;
     public Dictionary<string, Queue<GameObject>> PoolDictionary;
     
-
     public GameObject SpawnFromPool(string _tag,Vector3 _posotion,Quaternion _roration)
     {
         if (!PoolDictionary.ContainsKey(_tag))
@@ -49,9 +48,7 @@ public class ObjectPooler : MonoBehaviour
             Debug.LogWarning("Pool with tag" + _tag + "dosnt exist");
             return null;
         }
-
         GameObject _objectToSpawn = PoolDictionary[_tag].Dequeue();
-
         _objectToSpawn.SetActive(true);
         _objectToSpawn.transform.position = _posotion;
         _objectToSpawn.transform.rotation = _roration;
@@ -61,10 +58,7 @@ public class ObjectPooler : MonoBehaviour
         {
             _pooledObject.OnObjectSpawn();
         }
-
         PoolDictionary[_tag].Enqueue(_objectToSpawn);
-
         return _objectToSpawn;
     }
-
 }

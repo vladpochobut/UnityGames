@@ -7,15 +7,15 @@ public class HUD : MonoBehaviour
 {
     [SerializeField]
     private Text _score;
-    static float _actualScore = 0;
+    private static float _actualScore = 0;
     [SerializeField]
     private Text _asteroidsPassed;
-    const string _asteroidsPrefix = "Asteroids Passed  : ";
+    private const string _asteroidsPrefix = "Asteroids Passed  : ";
     static int _actualPassed;
     [SerializeField]
     private Text _maxScore;
-    static float _actualMaxScore;
-    const string _maxScorePrefix = "Max : ";
+    private static float _actualMaxScore;
+    private const string _maxScorePrefix = "Max : ";
 
     private void Start()
     {

@@ -7,7 +7,6 @@ public class GameManager : MonoBehaviour
 {
     private bool _gameHasEntered = false;
     public GameObject DeadUI;
-
     public void RestartGame()
     {
         if (_gameHasEntered == false)
@@ -16,6 +15,4 @@ public class GameManager : MonoBehaviour
             DeadUI.SetActive(true);
         }
     }
-    
- 
 }

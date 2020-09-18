@@ -6,7 +6,6 @@ public class RoadSpawnManager : MonoBehaviour
 {
     private RoadSpawner _roadSpawner;
 
-    // Start is called before the first frame update
     void Start()
     {
         _roadSpawner = GetComponent<RoadSpawner>();
@@ -15,6 +14,5 @@ public class RoadSpawnManager : MonoBehaviour
     public void SpawnTriggerEntered()
     {
         _roadSpawner.MoveRoad();
-    
     }
 }

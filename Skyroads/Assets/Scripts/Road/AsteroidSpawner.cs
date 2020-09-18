@@ -5,18 +5,13 @@ using UnityEngine.Experimental.PlayerLoop;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    //[SerializeField]
-    //private GameObject _asteroid;
-
     [SerializeField]
     private int _minSpawnChance = 15;
     [SerializeField]
     private int _maxSpawnChance = 60;
     [SerializeField]
     private int _complicityIncreaseRate = 6;
-
     private float _elapsedSec = 0;
-    //public List<GameObject> _roadList;
     ObjectPooler _objectPooler;
 
     public void Start()
@@ -24,6 +19,7 @@ public class AsteroidSpawner : MonoBehaviour
         _objectPooler = ObjectPooler.Instance;
         SpawnWithChance();
     }
+
     private void Update()
     {
         _elapsedSec += Time.deltaTime; 
@@ -39,18 +35,14 @@ public class AsteroidSpawner : MonoBehaviour
             _minSpawnChance = _maxSpawnChance;
     }
 
-
-
     public GameObject SpawnWithChance()
     {
         int i = Random.Range(0, 100);
         if (i > 0 && i < _minSpawnChance)
         {
             return _objectPooler.SpawnFromPool("Asteroid", transform.position, Quaternion.identity);
-                //Instantiate(_asteroid, transform.position, Quaternion.identity);
         }
         else
             return null;
     }
-
 }

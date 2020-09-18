@@ -9,6 +9,5 @@ public class Road : MonoBehaviour
     public void SpawnNewPoints()
     {
         SpawnPointsController.TriggerSpawnpoints();
-    
     }
 }
