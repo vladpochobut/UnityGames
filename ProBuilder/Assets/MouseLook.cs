@@ -9,7 +9,9 @@ public class MouseLook : MonoBehaviour
 {
     private float _mouseSensitivity = 100f;
 
-    public Transform _playerBody;
+    public Transform PlayerBody;
+    public Transform Target;
+
     private float _xRotation = 0f;
 
     private void Start()
@@ -21,17 +23,12 @@ public class MouseLook : MonoBehaviour
     {
         float _mouseX = Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
         float _mouseY = -Input.GetAxis("Mouse Y") * _mouseSensitivity * Time.deltaTime;
-        //print(" " + _mouseX + " " + _mouseY + "\n");
-        //float _mouseZ = Input.GetAxis("Mouse Z") * _mouseSensitivity * Time.deltaTime;
-        //_xRotation -= _mouseY;
-       // _xRotation = Mathf.Clamp(_xRotation, -90, 90f);
-
-        _playerBody.rotation = Quaternion.Euler(_playerBody.eulerAngles.x, _playerBody.eulerAngles.y, 0);
-        _playerBody.Rotate(_mouseY, _mouseX, 0);
+        transform.position = Target.position;
         
-
-        //_playerBody.Rotate(_mouseX);
-        //_playerBody.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+        PlayerBody.rotation = Quaternion.Euler(PlayerBody.eulerAngles.x, PlayerBody.eulerAngles.y, 0);
+        PlayerBody.Rotate(_mouseY, _mouseX, 0);
+        Target.rotation = PlayerBody.rotation;
+        
 
     }
 }
